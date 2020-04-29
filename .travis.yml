@@ -5,7 +5,9 @@ compiler: gcc
 env:
   global:
     - SKIP_SASS_BINARY_DOWNLOAD_FOR_CI=true
-
+arch:
+  - amd64
+  - arm64
 jobs:
   include:
     - stage: test
@@ -25,7 +27,6 @@ jobs:
     - stage: platform-test
       node_js: "12"
       os: linux
-      arch: arm64
     - stage: platform-test
       node_js: "12"
       os: osx
